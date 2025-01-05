@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A simple serverless webapp to host the collection of things I read or watch.",
   "main": "index.js",
+  "engines": {
+    "node": ">= 22.12.0",
+    "npm": ">= 10.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
