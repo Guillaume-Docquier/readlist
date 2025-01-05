@@ -2,25 +2,35 @@
   "name": "readlist",
   "version": "0.0.1",
   "description": "A simple serverless webapp to host the collection of things I read or watch.",
-  "main": "index.js",
-  "engines": {
-    "node": ">= 22.12.0",
-    "npm": ">= 10.9.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/Guillaume-Docquier/readlist#readme",
+  "bugs": {
+    "url": "https://github.com/Guillaume-Docquier/readlist/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Guillaume-Docquier/readlist.git"
   },
-  "author": "Guillaume Docquier",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Guillaume-Docquier/readlist/issues"
+  "author": "Guillaume Docquier",
+  "main": "index.js",
+  "scripts": {
+    "build": "rsbuild build",
+    "dev": "rsbuild dev --open",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "preview": "rsbuild preview"
   },
-  "homepage": "https://github.com/Guillaume-Docquier/readlist#readme",
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "@eslint/js": "^9.12.0",
+    "@rsbuild/core": "^1.1.8",
+    "eslint": "^9.12.0",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.8.1"
+  },
+  "engines": {
+    "node": ">= 22.12.0",
+    "npm": ">= 10.9.0"
   }
 }
