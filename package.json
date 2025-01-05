@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Guillaume-Docquier/readlist/issues"
   },
-  "homepage": "https://github.com/Guillaume-Docquier/readlist#readme"
+  "homepage": "https://github.com/Guillaume-Docquier/readlist#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
 }
