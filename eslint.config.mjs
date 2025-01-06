@@ -1,10 +1,12 @@
-import js from '@eslint/js';
+import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
 import globals from 'globals';
-import ts from 'typescript-eslint';
 
 export default [
-  { languageOptions: { globals: globals.browser } },
-  js.configs.recommended,
-  ...ts.configs.recommended,
-  { ignores: ['dist/'] },
+  ...neostandard({
+    globals: globals.browser,
+    ts: true,
+    noStyle: true,
+    semi: true,
+    ignores: resolveIgnoresFromGitignore(),
+  }),
 ];
