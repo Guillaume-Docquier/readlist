@@ -18,17 +18,28 @@
     "dev": "rsbuild dev --open",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "precommit": "lint-staged",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.1.8",
     "eslint": "^9.12.0",
     "globals": "^15.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
     "neostandard": "^0.12.0",
     "prettier": "^3.3.3",
     "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.{md,json,yml,yaml}": "prettier --write",
+    "*.{js,ts}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ]
   },
   "engines": {
     "node": ">= 22.12.0",

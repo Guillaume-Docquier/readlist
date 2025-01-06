@@ -1,5 +1,5 @@
-import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
-import globals from 'globals';
+import neostandard, { resolveIgnoresFromGitignore } from "neostandard";
+import globals from "globals";
 
 export default [
   ...neostandard({
@@ -9,4 +9,5 @@ export default [
     semi: true,
     ignores: resolveIgnoresFromGitignore(),
   }),
+  { linterOptions: { reportUnusedDisableDirectives: true } },
 ];
