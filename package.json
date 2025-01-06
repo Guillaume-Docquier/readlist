@@ -20,9 +20,17 @@
     "format:fix": "prettier --write .",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
-    "preview": "rsbuild preview",
     "precommit": "lint-staged",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preview": "rsbuild preview"
+  },
+  "lint-staged": {
+    "package.json": "sort-package-json",
+    "*.{md,json,yml,yaml}": "prettier --write",
+    "*.{js,ts}": [
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@rsbuild/core": "^1.1.8",
@@ -32,14 +40,8 @@
     "lint-staged": "^15.3.0",
     "neostandard": "^0.12.0",
     "prettier": "^3.3.3",
+    "sort-package-json": "^2.12.0",
     "typescript": "^5.7.2"
-  },
-  "lint-staged": {
-    "*.{md,json,yml,yaml}": "prettier --write",
-    "*.{js,ts}": [
-      "eslint --max-warnings 0 --fix",
-      "prettier --write"
-    ]
   },
   "engines": {
     "node": ">= 22.12.0",
