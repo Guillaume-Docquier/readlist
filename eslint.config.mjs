@@ -6,7 +6,7 @@ export default [
     globals: globals.browser,
     ts: true,
     noStyle: true,
-    semi: true,
+    noJsx: true,
     ignores: resolveIgnoresFromGitignore(),
   }),
   { linterOptions: { reportUnusedDisableDirectives: true } },

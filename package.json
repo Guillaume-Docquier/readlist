@@ -20,6 +20,7 @@
     "format:fix": "prettier --write .",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
+    "lint:inspect": "eslint --inspect-config",
     "precommit": "lint-staged",
     "prepare": "husky",
     "preview": "rsbuild preview"
