@@ -1,6 +1,7 @@
 import neostandard, { resolveIgnoresFromGitignore } from "neostandard";
-import love from "eslint-config-love";
 import globals from "globals";
+import love from "eslint-config-love";
+import pluginVue from "eslint-plugin-vue";
 
 export default [
   ...neostandard({
@@ -12,8 +13,19 @@ export default [
   }),
   {
     ...love,
+    rules: {
+      ...love.rules,
+      "@typescript-eslint/no-magic-numbers": [
+        "error",
+        {
+          ignoreNumericLiteralTypes: true,
+          ignoreEnums: true,
+        },
+      ],
+    },
     files: ["**/*.ts"],
     ignores: ["rsbuild.config.ts"],
   },
+  ...pluginVue.configs["flat/recommended"],
   { linterOptions: { reportUnusedDisableDirectives: true } },
 ];
