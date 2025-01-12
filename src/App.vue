@@ -1,28 +1,27 @@
+<script setup lang="ts">
+import HeaderSection from "./components/HeaderSection.vue";
+import LearningContentCard from "./components/LearningContentCard.vue";
+import FooterSection from "./components/FooterSection.vue";
+import { ref } from "vue";
+import { DATABASE } from "./data";
+
+const learningContents = ref(DATABASE);
+</script>
+
 <template>
-  <div class="content">
-    <h1>Rsbuild with Vue</h1>
-    <p>Start building amazing things with Rsbuild.</p>
-  </div>
+  <HeaderSection />
+  <LearningContentCard
+    v-for="learningContent of learningContents"
+    :key="learningContent.url"
+    :title="learningContent.title"
+    :author="learningContent.author"
+    :url="learningContent.url"
+    :summary="learningContent.summary"
+    :rating="learningContent.rating"
+    :thoughts="learningContent.thoughts"
+    :date="learningContent.date"
+  />
+  <FooterSection />
 </template>
 
-<style scoped>
-.content {
-  display: flex;
-  min-height: 100vh;
-  line-height: 1.1;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.content h1 {
-  font-size: 3.6rem;
-  font-weight: 700;
-}
-
-.content p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.5;
-}
-</style>
+<style scoped></style>

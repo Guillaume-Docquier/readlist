@@ -36,5 +36,5 @@ type Day =
  * Creates an EST date from a simple date string.
  */
 export function estDate(year: number, month: Month, day: Day): Date {
-  return new Date(`${year}${month}${day} GMT-0500`);
+  return new Date(`${year}-${month}-${day} GMT-0500`);
 }
