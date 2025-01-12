@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   pull_request:
 
+  # Since I'm not doing PRs for now
+  push:
+    branches:
+      - main
+
 jobs:
   ci:
     runs-on: ubuntu-latest
