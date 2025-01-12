@@ -1,1 +1,7 @@
-export type Rating = 1 | 2 | 3 | 4 | 5;
+export enum Rating {
+  VERY_BAD = 1,
+  BAD = 2,
+  AVERAGE = 3,
+  GOOD = 4,
+  VERY_GOOD = 5,
+}

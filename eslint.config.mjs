@@ -12,13 +12,6 @@ export default [
   }),
   {
     ...love,
-    rules: {
-      ...love.rules,
-      "@typescript-eslint/no-magic-numbers": [
-        "error",
-        { ignoreNumericLiteralTypes: true },
-      ],
-    },
     files: ["**/*.ts"],
     ignores: ["rsbuild.config.ts"],
   },
